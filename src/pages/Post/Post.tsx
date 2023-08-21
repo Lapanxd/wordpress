@@ -1,6 +1,7 @@
 import { types } from "../../core/enums/types.ts";
 import "./Post.css";
 import { IPostSection } from "../../core/models/post.ts";
+import { Button, Skeleton } from "@mui/material";
 
 const Post = (props: any) => {
   const { post } = props;
@@ -33,6 +34,12 @@ const Post = (props: any) => {
       <span>{`${post.createdAt} ${
         post.updatedAt ? " - " + post.updatedAt : ""
       }`}</span>
+
+      <Button variant="contained">Hello world</Button>
+
+      <Skeleton />
+      <Skeleton animation="wave" />
+      <Skeleton animation={false} />
     </div>
   );
 };
