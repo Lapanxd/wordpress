@@ -1,12 +1,12 @@
-interface IPostSection {
+import { types } from "../enums/types.ts";
+
+export interface IPostSection {
   id: number;
-  text?: {
+  section?: {
+    type: types;
     content: string;
     attributes: string[];
-  };
-  image?: {
-    content: string;
-    attributes: string[];
+    alt?: string;
   };
 }
 
