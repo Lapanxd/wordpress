@@ -1,45 +1,19 @@
-import { types } from "../../core/enums/types.ts";
+import PostComponent from "../../components/PostComponent/PostComponent.tsx";
 import "./Post.css";
-import { IPostSection } from "../../core/models/post.ts";
-import { Button, Skeleton } from "@mui/material";
+import { IUser } from "../../core/models/user.ts";
 
 const Post = (props: any) => {
   const { post } = props;
+  const userPlaceholder: IUser = {
+    id: 0,
+    name: "John DOE",
+    avatar: "https://placehold.co/50",
+  };
   return (
     <div>
-      <h1>{post.title}</h1>
-      {post.content.map((postSection: IPostSection) => {
-        if (postSection?.section?.type === types.text) {
-          return (
-            <p
-              key={postSection.id}
-              className={postSection.section.attributes.join(" ")}
-            >
-              {postSection.section.content}
-            </p>
-          );
-        } else if (postSection?.section?.type === types.image) {
-          return (
-            <img
-              key={postSection.id}
-              src={postSection?.section?.content}
-              className={postSection?.section?.attributes.join(" ")}
-              alt={postSection.section.alt}
-            />
-          );
-        }
-      })}
-
-      <p>{post.author}</p>
-      <span>{`${post.createdAt} ${
-        post.updatedAt ? " - " + post.updatedAt : ""
-      }`}</span>
-
-      <Button variant="contained">Hello world</Button>
-
-      <Skeleton />
-      <Skeleton animation="wave" />
-      <Skeleton animation={false} />
+      <div className="article-container">
+        <PostComponent post={post} user={userPlaceholder}></PostComponent>
+      </div>
     </div>
   );
 };

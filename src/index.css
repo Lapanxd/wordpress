@@ -1,4 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&display=swap');
 
+* {
+    margin: 0;
+}
+
 :root {
+    /* colors */
+    --primary: #F5CB5C90;
+    --secondary: #F24236;
+
+    --dark: #212121;
+    --light: #EBEEE7;
+
+    --title-weight: 700;
+    --paragraph-weight: 400;
+
+    font-family: 'Inter';
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: var(--title-weight);
+    color: var(--dark);
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+}
+
+h1::before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Définit la moitié de la hauteur */
+    background-color: var(--primary); /* Couleur de fond de l'arrière-plan */
+    z-index: -1; /* Place le pseudo-élément derrière le texte */
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 0.7rem;
+}
+
+p {
+    letter-spacing: .3px;
+    font-weight: var(--paragraph-weight);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 1rem;
+}
+
+.full-size-content {
+    width: 100%;
+}
+
+.main-content {
+    width: 80%;
+}
+
+.side-content {
+    width: 20%;
 }

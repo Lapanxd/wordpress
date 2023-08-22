@@ -12,8 +12,9 @@ const Posts = () => {
           id: 0,
           section: {
             type: types.image,
-            content: "https://placehold.co/700x150/EEE/31343C",
-            attributes: ["cover", "test"],
+            content:
+              "https://images.unsplash.com/photo-1682685795557-976f03aca7b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+            attributes: ["article-cover", "test"],
             alt: "Première image incr wew",
           },
         },
@@ -42,7 +43,6 @@ const Posts = () => {
   ];
   return (
     <div>
-      <p>Hello world</p>
       <Post post={posts[0]}></Post>
     </div>
   );

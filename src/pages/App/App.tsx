@@ -4,7 +4,9 @@ import router from "./App.router.tsx";
 function App() {
   return (
     <div>
-      <RouterProvider router={router}></RouterProvider>
+      <div className="container">
+        <RouterProvider router={router}></RouterProvider>
+      </div>
     </div>
   );
 }
